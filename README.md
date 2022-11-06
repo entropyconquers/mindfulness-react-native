@@ -1,1 +1,0 @@
-# mindfulness-react-native
