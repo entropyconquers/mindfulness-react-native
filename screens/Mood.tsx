@@ -18,7 +18,7 @@ const blobs = {
     midRight: false,
     midLeft: false,
     bottomLeft: false,
-    bottomRight: false,
+    bottomRight: true,
 }
 const blobColors = {
     topLeft: require('../assets/images/blob_blue.png'),
@@ -26,7 +26,7 @@ const blobColors = {
     midRight: require('../assets/images/blob_blue.png'),
     midLeft: require('../assets/images/blob_blue.png'),
     bottomLeft: require('../assets/images/blob_orange.png'),
-    bottomRight: require('../assets/images/blob_blue.png'),
+    bottomRight: require('../assets/images/blob_orange.png'),
 
 
 }
