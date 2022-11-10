@@ -1,7 +1,3 @@
-/**
- * Learn more about using TypeScript with React Navigation:
- * https://reactnavigation.org/docs/typescript/
- */
 
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
@@ -22,4 +18,26 @@ export type Props = NativeStackScreenProps<
   RootStackParamList,
   'Splash'
 >;
+
+export type buttonProps = {
+  onPress: () => void;
+  title: string;
+  backgroundColor: string|undefined;
+  color: string|undefined;
+  
+}
+
+/*
+Code explanation:
+- What is RootStackParamList? 
+  * It is a type that represents the route names and the params for each screen.
+  * It is used to type the navigation prop.
+  * It is used to type the route prop.
+  - What is NativeStackScreenProps?
+  * It is a type that represents the navigation prop and the route prop for a screen.
+  * It is used to type the props of a screen component.
+*/
+
+
+
 

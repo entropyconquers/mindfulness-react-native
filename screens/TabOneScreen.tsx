@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
 import { Props } from '../types';
-import { Button, Text, View } from 'react-native';
-
+import { View } from 'react-native';
+import { Button, Text } from 'native-base';
+import Primary_Button from '../components/Primary_Button';
 export default function TabOneScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
-      
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Mood')}
+      <Primary_Button
+        onPress={() => navigation.navigate("Mood")}
+        title={"Get Started"}
+        backgroundColor={"brand.400"}
+        color={"white"}
       />
     </View>
   );
@@ -20,13 +22,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  
 });
