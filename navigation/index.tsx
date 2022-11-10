@@ -12,8 +12,11 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import BaseScreen from '../screens/BaseScreen';
+
+import Splash from '../screens/Splash';
+import Login from '../screens/Login';
+import Breathe from '../screens/Breathe';
+import Mood from '../screens/Mood';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -41,8 +44,10 @@ function RootNavigator() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Splash" component={BaseScreen} />
-      <Stack.Screen name="Mood" component={TabTwoScreen} />
+      <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Breathe" component={Breathe} />
+      <Stack.Screen name="Mood" component={Mood} />
     </Stack.Navigator>
   );
 }

@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Props } from '../types';
 import { View } from 'react-native';
 import { Box, Button, Image, Text } from 'native-base';
 import Primary_Button from '../components/Primary_Button';

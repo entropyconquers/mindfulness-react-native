@@ -1,21 +1,22 @@
 import { StyleSheet } from 'react-native';
-import { Props } from '../types';
+import { Breatheprops, LoginProps } from '../types';
 import { View } from 'react-native';
-import { Box, Button, Image, Text, VStack } from 'native-base';
+import { Box, Button, Image, Text, VStack, Input , useToast } from 'native-base';
 import Primary_Button from '../components/Primary_Button';
 import Logo from '../assets/images/logo.svg';
 import Background from '../components/Background';
 import AnimatedLottieView from 'lottie-react-native';
-
+import React from 'react';
+import ToastAlert from '../components/Toast';
 
 const showLogo = true;
 
 const blobs = {
-    topLeft: true,
-    topRight: false,
-    midRight: true,
+    topLeft: false,
+    topRight: true,
+    midRight: false,
     midLeft: false,
-    bottomLeft: true,
+    bottomLeft: false,
     bottomRight: false,
 }
 const blobColors = {
@@ -30,9 +31,19 @@ const blobColors = {
 }
 
 
-export default function TabOneScreen({ navigation }: Props) {
+export default function Login({ navigation }: Breatheprops) {
+    const [times, setTimes] = React.useState(1);
+    const animationRef = React.useRef<AnimatedLottieView>(null)
+    const AnimationFinish = () => {
+        if(times < 1){
+            animationRef.current?.play()
+            setTimes((times) => times + 1);
+        }
+        else{
+            navigation.navigate('Mood');
+        }
 
-    
+    }
   return (
     <View style={styles.container}>
         <Background
@@ -41,10 +52,13 @@ export default function TabOneScreen({ navigation }: Props) {
             blobColors={blobColors}
         />
         <VStack
-            mt={125}
+            mt={150}
             width={"100%"}
-            p={5}
+            
             flex={1}
+            alignContent={"center"}
+            justifyContent={"center"}
+            alignItems={"center"}
             
         >
             <Text
@@ -52,41 +66,37 @@ export default function TabOneScreen({ navigation }: Props) {
                 fontWeight={"bold"}
                 fontFamily={"Gilroy-Bold"}
             >
-                Embark upon a new <Text
-                 color={"brand.400"}
-                 fontFamily={"Butler-ExtraBold"}
-                 >
-                    Journey
-                </Text>
+                Breathe in... 
             </Text>
             <Text
-                fontSize={18}
-                opacity={0.5}
-                fontFamily={"Gilroy-Medium"}
+                fontSize={80}
+                mt={5}
+                fontFamily={"Gilroy-Regular"}
+                color={"brand.400"}
             >
-                Learn to live your life in a new way with this app. Lorem Inpsum dlor
+                {6-times}
             </Text>
+            
             <VStack
                 flex={1}
                 justifyContent="flex-end"
                 
             >
                 <AnimatedLottieView
-                    source={require('../assets/lottie/meditation.json')}
+                    ref={animationRef}
+                    source={require('../assets/lottie/breathe.json')}
                     autoPlay
-                    loop
+                    
+                    loop = {false}
+                    // play 5 times
+                    onAnimationFinish={AnimationFinish}
                     style={{
-                        width: 400,
-                        height: 400,
-                        alignSelf: "center",
+                        width: "100%",
+                        
+                        
                     }}
                 />
-                <Primary_Button
-                    onPress={() => navigation.navigate("Mood")}
-                    title={"Let's Begin"}
-                    backgroundColor={"brand.400"}
-                    color={"white"}
-                />
+               
             </VStack>
             
 

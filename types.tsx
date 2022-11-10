@@ -11,12 +11,26 @@ declare global {
 
 export type RootStackParamList = {
   Splash: undefined;
+  Login: undefined;
+  Breathe: undefined;
   Mood: undefined;
 };
 
-export type Props = NativeStackScreenProps<
+export type SplashProps = NativeStackScreenProps<
   RootStackParamList,
   'Splash'
+>;
+export type LoginProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Login'
+>;
+export type Breatheprops = NativeStackScreenProps<
+  RootStackParamList,
+  'Breathe'
+>;
+export type MoodProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Mood'
 >;
 
 export type buttonProps = {
