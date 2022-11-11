@@ -21,7 +21,7 @@ export default ({
   
   )  => {
     const toast = useToast();
-  return <Alert maxWidth="90%" p={5} alignSelf="center" flexDirection="row" status={status ? status : "info"} variant={variant} {...rest}>
+  return <Alert maxWidth="90%" borderRadius={10} p={5} alignSelf="center" flexDirection="row" status={status ? status : "info"} variant={variant} {...rest}>
       <VStack space={1} flexShrink={1} w="100%">
         <HStack flexShrink={1} alignItems="center" justifyContent="space-between">
           <HStack space={2} flexShrink={1} alignItems="center">

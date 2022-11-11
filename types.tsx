@@ -15,6 +15,7 @@ export type RootStackParamList = {
   Breathe: undefined;
   Mood: undefined;
   Home : undefined;
+  Journal : undefined;
 };
 
 export type SplashProps = NativeStackScreenProps<
@@ -37,6 +38,11 @@ export type HomeProps = NativeStackScreenProps<
   RootStackParamList,
   'Home'
 >;
+export type JournalProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Journal'
+>;
+
 
 
 export type buttonProps = {

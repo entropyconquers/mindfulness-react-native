@@ -143,7 +143,7 @@ export default function TabOneScreen({ navigation }: HomeProps) {
                 </TouchableOpacity>
                 {/* Journal */}
                 <TouchableOpacity
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => navigation.navigate("Journal")}
                     style={{
                         width: "100%",
                         height: 170,
@@ -300,3 +300,32 @@ const styles = StyleSheet.create({
   },
   
 });
+
+
+/*
+Explain the code in this file (in extensive detail)
+## Blobs
+- The blobs are just for blurring the background. 
+
+## Lottie Animations
+- The lottie animations are from the lottiefiles website. I used the lottiefiles website to convert the animations to json files. I then imported the json files into the project and used the AnimatedLottieView component to display the animations.
+
+## Flex
+- Flex is a component from the react-native-elements library. It is a wrapper for the flexbox layout. I used it to make the layout responsive.
+
+## TouchableOpacity
+- TouchableOpacity is a component from the react-native library. It is a wrapper for the touchable opacity component. I used it to make the cards clickable.
+
+## Navigation
+- The navigation is from the react-navigation library. I used it to navigate to the home screen when the cards are clicked.
+
+## SVG
+- The SVGs are from the react-native-svg library. I used it to display the SVGs.
+
+## VStack
+- VStack is a component from the react-native-elements library. It stacks the children vertically. I used it to stack the cards vertically.
+
+## HStack
+- HStack is a component from the react-native-elements library. It stacks the children horizontally. I used it to stack the cards horizontally.
+
+*/
