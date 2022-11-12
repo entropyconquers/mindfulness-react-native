@@ -19,6 +19,8 @@ import Breathe from '../screens/Breathe';
 import Mood from '../screens/Mood';
 import Home from '../screens/Home';
 import Journal from '../screens/Journal';
+import GoodJob from '../screens/GoodJob';
+import MemoryGame from '../screens/MemoryGame';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -46,12 +48,17 @@ function RootNavigator() {
         headerShown: false,
       }}
     >
+      
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Breathe" component={Breathe} />
       <Stack.Screen name="Mood" component={Mood} />
       <Stack.Screen name="Home" component={Home} /> 
       <Stack.Screen name="Journal" component={Journal} />
+      <Stack.Screen name="MemoryGame" component={MemoryGame} />
+      <Stack.Screen name="GoodJob" component={GoodJob} />
+      
+      
      {/* <Stack.Screen name="Journal" component={Journal} /> */}
     </Stack.Navigator>
   );

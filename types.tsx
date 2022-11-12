@@ -16,6 +16,8 @@ export type RootStackParamList = {
   Mood: undefined;
   Home : undefined;
   Journal : undefined;
+  GoodJob : undefined;
+  MemoryGame: undefined;
 };
 
 export type SplashProps = NativeStackScreenProps<
@@ -42,6 +44,14 @@ export type JournalProps = NativeStackScreenProps<
   RootStackParamList,
   'Journal'
 >;
+export type GoodJobProps = NativeStackScreenProps<
+  RootStackParamList,
+  'GoodJob'
+>;
+export type MemoryGameProps = NativeStackScreenProps<
+  RootStackParamList,
+  'MemoryGame'
+>;
 
 
 
@@ -50,7 +60,6 @@ export type buttonProps = {
   title: string;
   backgroundColor: string|undefined;
   color: string|undefined;
-  
 }
 
 /*

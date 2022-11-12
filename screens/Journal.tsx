@@ -268,7 +268,7 @@ export default function TabOneScreen({ navigation }: JournalProps) {
             }
             })
             //navigate to home screen
-            navigation.navigate("Home");
+            navigation.navigate("GoodJob");
         } catch (e) {
         // saving error
         }
@@ -281,7 +281,7 @@ export default function TabOneScreen({ navigation }: JournalProps) {
               const dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
                 const jsonValue = await AsyncStorage.getItem(dmy.toString())
-                console.log(jsonValue)
+                //.log(jsonValue)
                 if (jsonValue != null) {
                     const data = JSON.parse(jsonValue)
                     setYourDay(data.yourDay);
@@ -566,13 +566,7 @@ export default function TabOneScreen({ navigation }: JournalProps) {
                   />
                 </VStack>
               </VStack>
-              <Primary_Button
-                onPress={() => handleSave()}
-                title={"Save journal"}
-                backgroundColor={"brand.400"}
-                color={"white"}
-              />
-              
+             
             </KeyboardAwareScrollView>
             <Primary_Button
                 onPress={() => handleSave()}

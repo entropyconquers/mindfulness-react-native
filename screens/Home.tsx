@@ -10,6 +10,7 @@ import { LinearGradient } from 'react-native-svg';
 import Sounds from '../assets/images/sounds.svg';
 import Journal from '../assets/images/journal.svg';
 import Memory from '../assets/images/memory.svg';
+import { useEffect, useState } from 'react';
 const showLogo = true;
 
 const blobs = {
@@ -26,7 +27,7 @@ const blobColors = {
     midRight: require('../assets/images/blob_blue.png'),
     midLeft: require('../assets/images/blob_blue.png'),
     bottomLeft: require('../assets/images/blob_orange.png'),
-    bottomRight: require('../assets/images/blob_orange.png'),
+    bottomRight: require('../assets/images/blob_blue.png'),
 
 
 }
@@ -35,7 +36,24 @@ const blobColors = {
 
 export default function TabOneScreen({ navigation }: HomeProps) {
 
+    // morning , afternoon, evening based on time of day
+    const [timeOfDay, setTimeOfDay] = useState('morning');
+    useEffect(() => {
+        const date = new Date();
+        const hour = date.getHours();
+        if (hour >= 4 && hour < 12) {
+            setTimeOfDay('morning');
+        }
+        else if (hour >= 12 && hour < 17) {
+            setTimeOfDay('afternoon');
+        }
+        else {
+            setTimeOfDay('evening');
+        }
+    }, [])
     
+    
+
   return (
     <View style={styles.container}>
         <Background
@@ -55,14 +73,14 @@ export default function TabOneScreen({ navigation }: HomeProps) {
                 fontWeight={"bold"}
                 fontFamily={"Gilroy-Bold"}
             >
-                Good Morning!
+                Good {timeOfDay}!
             </Text>
             <Text
                 fontSize={18}
                 opacity={0.5}
                 fontFamily={"Gilroy-Medium"}
             >
-                What would you like to do this morning?
+                What would you like to do this {timeOfDay}?
             </Text>
             
             <VStack
@@ -212,7 +230,7 @@ export default function TabOneScreen({ navigation }: HomeProps) {
                 </TouchableOpacity>
                 {/* Memory */}
                 <TouchableOpacity
-                    onPress={() => navigation.navigate("Home")}
+                    onPress={() => navigation.navigate("MemoryGame")}
                     style={{
                         width: "100%",
                         height: 170,
@@ -279,13 +297,7 @@ export default function TabOneScreen({ navigation }: HomeProps) {
                         </VStack>
                     </Flex>
                 </TouchableOpacity>
-                
-                
-                
-                
             </VStack>
-            
-
         </VStack>
     </View>
   );
